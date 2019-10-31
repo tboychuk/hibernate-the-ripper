@@ -22,15 +22,16 @@ public class LoadListOfEntitiesExample {
 
     private static void loadEntityList() {
         List<Account> accountList = TestDataGenerator.generateAccountList(10);
-        Account account = accountList.get(0);
         performWithinPersistenceContext(entityManager -> accountList.forEach(entityManager::persist));
+        Long targetId = accountList.get(0).getId();
 
         performWithinPersistenceContext(entityManager -> {
-            Account foundAccount = entityManager.find(Account.class, account.getId());
-            List<Account> foundAccountList = entityManager.createQuery("select a from Account a", Account.class)
+            Account targetAccount = entityManager.find(Account.class, targetId);
+            List<Account> foundAccountList = entityManager
+                    .createQuery("select a from Account a", Account.class)
                     .getResultList();
-            boolean match = foundAccountList.stream().anyMatch(a -> a == foundAccount);
-            System.out.printf("Account match: %s%n", match);
+            boolean match = foundAccountList.stream().anyMatch(a -> a == targetAccount);
+            System.out.printf("> Account match: %s%n", match);
         });
 
     }

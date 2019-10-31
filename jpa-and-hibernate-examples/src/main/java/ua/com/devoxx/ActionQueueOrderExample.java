@@ -24,11 +24,11 @@ public class ActionQueueOrderExample {
 
         performWithinPersistenceContext(entityManager -> {
             Account managedAccount = entityManager.merge(account);
-            System.out.printf("Removing entity: %s%n", managedAccount);
+            System.out.printf("> Removing entity: %s%n", managedAccount);
             entityManager.remove(managedAccount);
             Account newAccount = TestDataGenerator.generateAccount();
             newAccount.setEmail(account.getEmail());
-            System.out.printf("Persisting entity: %s%n", newAccount);
+            System.out.printf("> Persisting entity: %s%n", newAccount);
             entityManager.persist(newAccount);
         });
     }

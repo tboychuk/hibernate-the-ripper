@@ -11,12 +11,11 @@ import ua.com.devoxx.repository.AccountRepository;
 public class AccountService {
     private final AccountRepository accountRepository;
 
-//    @Transactional // session started
+    @Transactional
     public void removeAccountById(Long id) {
         Account account = accountRepository.findById(id)
                 .orElseThrow();
         System.out.printf("> Removing account: %s%n", account);
-        System.out.println("> Expecting SELECT");
         accountRepository.delete(account);
-    }// session is closed
+    }
 }

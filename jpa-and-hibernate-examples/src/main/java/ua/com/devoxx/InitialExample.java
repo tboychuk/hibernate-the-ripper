@@ -21,6 +21,6 @@ public class InitialExample {
     private static void persistEntity() {
         Account account = TestDataGenerator.generateAccount();
         performWithinPersistenceContext(entityManager -> entityManager.persist(account));
-        System.out.printf("Persisted account: %s%n", account);
+        System.out.printf("> Persisted account: %s%n", account);
     }
 }

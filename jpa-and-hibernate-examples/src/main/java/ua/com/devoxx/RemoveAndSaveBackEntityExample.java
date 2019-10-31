@@ -24,9 +24,9 @@ public class RemoveAndSaveBackEntityExample {
 
         performWithinPersistenceContext(entityManager -> {
             Account managedAccount = entityManager.find(Account.class, account.getId());
-            System.out.println("Removing entity");
+            System.out.println("> Removing entity");
             entityManager.remove(managedAccount);
-            System.out.println("Persisting entity again");
+            System.out.println("> Persisting entity again");
             entityManager.persist(managedAccount);
         });
     }

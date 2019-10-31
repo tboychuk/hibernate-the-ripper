@@ -21,12 +21,12 @@ public class UpdateEntityExample {
     private static void loadEntityById() {
         Account account = TestDataGenerator.generateAccount();
         performWithinPersistenceContext(entityManager -> entityManager.persist(account));
-        System.out.printf("Persisted account: %s%n", account);
+        System.out.printf("> Persisted account: %s%n", account);
 
         performWithinPersistenceContext(entityManager -> {
             Account managedAccount = entityManager.find(Account.class, account.getId());
             managedAccount.setLastName("Devoxxian");
-            System.out.printf("Updated account: %s%n", managedAccount);
+            System.out.printf("> Updated account: %s%n", managedAccount);
         });
     }
 }

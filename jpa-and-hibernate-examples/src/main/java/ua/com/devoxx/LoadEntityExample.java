@@ -22,7 +22,7 @@ public class LoadEntityExample {
     private static void loadEntityById() {
         Long accountId = saveRandomAccount();
         Account loadedAccount = performReturningWithinPersistenceContext(entityManager -> entityManager.find(Account.class, accountId));
-        System.out.printf("Loaded account: %s%n", loadedAccount);
+        System.out.printf("> Loaded account: %s%n", loadedAccount);
     }
 
     private static Long saveRandomAccount() {
