@@ -7,6 +7,7 @@ import static ua.com.devoxx.util.jpa.JpaUtil.close;
 import static ua.com.devoxx.util.jpa.JpaUtil.init;
 import static ua.com.devoxx.util.jpa.JpaUtil.performWithinPersistenceContext;
 
+// Won't be presented during the talk
 public class UpdateEntityExample {
 
     public static void main(String[] args) {
