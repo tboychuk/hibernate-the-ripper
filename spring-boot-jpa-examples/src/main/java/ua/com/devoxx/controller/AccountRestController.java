@@ -22,11 +22,6 @@ public class AccountRestController {
 
     private final AccountService accountService;
 
-    @GetMapping("/{id}")
-    public Account getOne(@PathVariable Long id) {
-        return accountRepository.findById(id).orElseThrow();
-    }
-
     @GetMapping
     public List<Account> getAll() {
         return accountRepository.findAll();

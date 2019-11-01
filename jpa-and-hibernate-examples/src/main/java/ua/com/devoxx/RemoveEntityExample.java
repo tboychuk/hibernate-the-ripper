@@ -5,7 +5,6 @@ import ua.com.devoxx.util.data.TestDataGenerator;
 
 import static ua.com.devoxx.util.jpa.JpaUtil.close;
 import static ua.com.devoxx.util.jpa.JpaUtil.init;
-import static ua.com.devoxx.util.jpa.JpaUtil.performReturningWithinPersistenceContext;
 import static ua.com.devoxx.util.jpa.JpaUtil.performWithinPersistenceContext;
 
 public class RemoveEntityExample {
